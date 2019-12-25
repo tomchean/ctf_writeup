@@ -31,10 +31,8 @@ while high > low:
         low = mid
     else:
         high = mid
-    
-    n = mid
 
 print('cipher: ', cipher)
-print('n: ', n)
+print('high: ', high)
 
 r.close()
