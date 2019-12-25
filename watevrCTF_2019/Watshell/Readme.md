@@ -8,7 +8,7 @@ Command:
 
 We can give up to 0x20 values to the program. It calculates the following formula for each value:
 ```
-m[i] = pow(v[i], 113, 143)
+output = pow(input, 113, 143)
 ```
 So you can find that d = 113 and n = 143.
 
