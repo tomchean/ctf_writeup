@@ -1,4 +1,4 @@
-# Fractorization (crypto, 300p, 5 solved)
+# Fractorization
 
 In the challenge we get [encryption code](enc.py), [encrypted flag](flag.enc), [encrypted private key](priv.der.enc) and [public key](pub.der).
 
