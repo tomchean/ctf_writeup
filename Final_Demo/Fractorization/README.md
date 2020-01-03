@@ -1,6 +1,6 @@
 # Fractorization
 
-In the challenge we get [encryption code](enc.py), [encrypted flag](flag.enc), [encrypted private key](priv.der.enc) and [public key](pub.der).
+In the challenge we get [encryption code](enc.py), [encrypted flag](flag.enc), [encrypted private key](priv.der.enc) and [public key](pub.der)
 
 The code is quite short and simple:
 
