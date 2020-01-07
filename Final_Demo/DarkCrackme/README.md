@@ -56,7 +56,87 @@ So, we know that it first check whether the password's characters are in ```aAdg
 
 Finally, it will compare the binary array of the string of ```username``` and that of ```password```. If two binary array are the same, then it will print the flag.
 
-Let's all! We finally finish analyzing the working flow of this executable file. What we can do is to reverse the step to get the password.
+Let's all! We finally finish analyzing the working flow of this executable file. What we can do is to reverse these steps to get the password.
+
+We only know the username, which is ```1_4m_th3_wh1t3r0s3```, thus we can use it as clue to find password.
+
+Convert it to binary array first, which is:
+```['00110001', '01011111', '00110100', '01101101', '01011111', '01110100', '01101000', '00110011', '01011111', '01110111', '01101000', '00110001', '01110100', '00110011', '01110010', '00110000', '01110011', '00110011']```
+
+Each 8 bits binary code represents a charactor of ```1_4m_th3_wh1t3r0s3```.
+
+Second step, split the binary array into two sub arrays according to the index. 
+
+Take the first element ```'00110001'``` of the above binary array for example, After splitting, the bits with even index will gather to a sub array, which is ```0100```. And the bits with odd index will gather to a sub array, which is ```0101```.
+
+Repeat the steps above 18 times to split all the binary code into two sub arrays.
+
+Third step, 
+
+
+```python
+import numpy as np
+import math
+
+def find_idx(idx_binary_arr):
+    for idx in range(16):
+        binary_array = binary_generator(idx)
+        if ( check_binary_array(idx_binary_arr, binary_array) ):
+            return idx
+
+def binary_generator(idx): # sub_401201
+    binary_array = np.ones(4)
+    v4 = 3
+    while idx > 0 :
+        if idx & 1: # odd
+            binary_array[v4] = 0
+        else:       # even
+            binary_array[v4] = 1
+        v4 -= 1
+        idx = math.floor(idx / 2)
+
+    return binary_array
+
+def check_binary_array(a1, a2):
+    length = 4
+    for i in range(length):
+        if a1[i] != a2[i]:
+            return False
+    return True
+
+if __name__ == "__main__":
+    username = '1_4m_th3_wh1t3r0s3'
+    check_even_str = 'ADGJLQETUOZCBM10'
+    check_odd_str = 'sfhkwryipxvn5238'
+    # convert username to binary code
+    binary_username = [ bin(ord(ch))[2:].zfill(8) for ch in username ]
+    '''
+    binary_username:
+    ['00110001', '01011111', '00110100', '01101101', '01011111', 
+     '01110100', '01101000', '00110011', '01011111', '01110111', 
+     '01101000', '00110001', '01110100', '00110011', '01110010', 
+     '00110000', '01110011', '00110011']
+    '''
+    # split binary_username
+    even_idx_binary_arr, odd_idx_binary_arr = np.zeros((18, 4)), np.zeros((18, 4))
+    for i in range(18):
+        for j in range(4):
+            even_idx_binary_arr[i][j] = binary_username[i][2*j]
+            odd_idx_binary_arr[i][j] = binary_username[i][2*j+1]
+
+    # solve password
+    password = ''
+    for i in range(18):
+        even = check_even_str[find_idx(even_idx_binary_arr[i])]
+        password += even
+        odd = check_odd_str[find_idx(odd_idx_binary_arr[i])]
+        password += odd
+    
+    print(password)
+```
+    
+
+
 
 
 
