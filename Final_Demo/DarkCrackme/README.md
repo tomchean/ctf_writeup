@@ -22,5 +22,15 @@ We can see in line 31, we must type ```1_4m_th3_wh1t3r0s3``` as our username to 
 And then in line 34, we can see that it calls a function called ```sub_4013F9```, whose inputs are the string which user types to ```username``` and ```password```. Let's dig into it.
 
 sub_4013F9(c code)
+![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/DarkCrackme/sub_4013F9.png)
+
+In line 9, we know the input string length of ```username``` and ```password``` can not be greater than 40.
+In line 11, we know the input string length of ```password``` is two times of that of ```username```. So the input string length of ```password``` must be ```36```. If the conditons above are satisfied, the program will call ```sub_401291```, whose input is the input string of ```password```. Let's dig into it.
+
+sub_401291(c code)
+![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/DarkCrackme/sub_401291.png)
+
+
+
 
 
