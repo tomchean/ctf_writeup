@@ -73,6 +73,7 @@ Repeat the steps above 18 times to split all the binary code into two sub arrays
 
 Third step, 
 
+The python3 code below is my solution to this challenge. The code whose filename is ```darkcrackme.py``` is in the same directory with ```README.md```. TAs can simply run this file by typing ```python3 darkcrackme.py``` on the command line, and the password will be printed.
 
 ```python
 import numpy as np
