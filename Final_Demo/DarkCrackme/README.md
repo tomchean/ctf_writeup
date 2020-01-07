@@ -1,7 +1,7 @@
 # Dark Crackme
 ## Introduction
 
-This is the reversing challenge in inferno CTF 2019.
+This is the reversing challenge in inferno CTF 2019.(377 pts)
 
 ## Analysis
 
@@ -61,6 +61,8 @@ Finally, it will compare the binary array of the string of ```username``` and th
 
 Let's all! We finally finish analyzing the working flow of this executable file. What we can do is to reverse these steps to get the password.
 
+## Solution
+
 We only know the username, which is ```1_4m_th3_wh1t3r0s3```, thus we can use it as clue to find password.
 
 Convert it to binary array first, which is:
@@ -74,9 +76,24 @@ Take the first element ```'00110001'``` of the above binary array for example, A
 
 Repeat the steps above 18 times to split all the binary code into two sub arrays.
 
-Third step, 
+Final step, we should know the origin of the binary sub array. That is, we should know that the binary sub array belongs to which character in ```aAdgjlqetuozcbm``` and ```aSfhkwryipxvn52```. 
 
-The python3 code below is my solution to this challenge. The code whose filename is ```darkcrackme.py``` is in the same directory with ```README.md```. TAs can simply run this file by typing ```python3 darkcrackme.py``` on the command line, and the password will be printed.
+Thus, we can use iterative method to find the character and gather them into a string, which is exactly what we want---```password```
+
+Now we have the exact string of ```username``` and ```password```, we can execute the executable file again and type the string of username and password to get the flag.
+
+Here is the result:
+![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/DarkCrackme/flag.png)
+
+## Flag
+
+```infernoCTF{CvBsCxOwBsCfOiZvBsZsOiCvCfZvZkCnZhZv}```
+
+## Reproducibility
+
+The python3 code below is my solution to this challenge. The code whose filename is ```darkcrackme.py``` is in the same directory with ```README.md```. TAs can simply run this file by typing ```python3 darkcrackme.py``` on the command line, and the password will be printed. 
+
+Then execute the executable file ```darkcrackme```(which is also in the same directory) and type the string of username(```1_4m_th3_wh1t3r0s3```) and password to get the flag.
 
 ```python
 import numpy as np
