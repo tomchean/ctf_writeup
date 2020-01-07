@@ -1,6 +1,9 @@
 # Dark Crackme
+## Introduction
 
 This is the reversing challenge in inferno CTF 2019.
+
+## Analysis
 
 At first, we will get a file called ```darkcrackme```. We can execute it on bash and see what will happen.
 
