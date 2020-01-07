@@ -51,7 +51,7 @@ sub_401201(c code)
 
 In sub_401201, we know that it first creates an array whose length is 4 and assigns each element with value 1. Then it edits the value of element with odd or even index, depending on the input(```v2```). The final output of this function is an array whose element value is 0 or 1.
 
-Let's go back to ```sub_401291``` to see what it have done.
+Let's go back to ```sub_401291``` to see what it has done.
 
 ![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/DarkCrackme/sub_401291.png)
 
@@ -93,7 +93,7 @@ Here is the result:
 
 The python3 code below is my solution to this challenge. The code whose filename is ```darkcrackme.py``` is in the same directory with ```README.md```. TAs can simply run this file by typing ```python3 darkcrackme.py``` on the command line, and the password will be printed. 
 
-Then execute the executable file ```darkcrackme```(which is also in the same directory) and type the string of username(```1_4m_th3_wh1t3r0s3```) and password to get the flag.
+Then execute the executable file ```darkcrackme```(which is also in the same directory) and type the string(```1_4m_th3_wh1t3r0s3```) to  username and type the password you get from the code below to password. And you will get the flag.
 
 ```python
 import numpy as np
@@ -155,9 +155,3 @@ if __name__ == "__main__":
     
     print(password)
 ```
-    
-
-
-
-
-
