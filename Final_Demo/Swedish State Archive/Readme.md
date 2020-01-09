@@ -2,6 +2,9 @@
 ---
 ## Solution
 1. First we see in server.py, the "git" is mis spell, so we can see if there's flag in git history
+        
+    ![](https://i.imgur.com/9gwJC2f.png)
+
 2. first, get the latest commit by use
     ```zsh
     curl http://13.53.175.227:50000/.git/refs/heads/master
