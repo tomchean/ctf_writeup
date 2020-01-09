@@ -83,6 +83,7 @@ Thus, we can use iterative method to find the character and gather them into a s
 Now we have the exact string of ```username``` and ```password```, we can execute the executable file again and type the string of username and password to get the flag.
 
 Here is the result:
+
 ![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/DarkCrackme/flag.png)
 
 ## Flag
