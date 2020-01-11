@@ -125,7 +125,7 @@ main_function([
   '꿚', 0, 4],
  [  # assign the sixth element of _16list to 19
   '꼖', 5, 19],
- [  
+ [  # string comparison
   '꽲', 0, 6, 5],
  [  # print the first element of _16list (user input after conversion)
   '돯', 1],
@@ -174,3 +174,34 @@ And I noticed that some part(line67~111) of the ```main_function``` is wrong int
 
 Now everything is clear, we need to reverse the operations, which are done on user's input, on the string(```á×äÓâæíäàßåÉÛãåäÉÖÓÉäàÓÉÖÓåäÉÓÚÕæïèäßÙÚÉÛÓäàÙÔÉÓâæÉàÓÚÕÓÒÙæäàÉäàßåÉßåÉäàÓÉÚÓáÉ·Ôâ×ÚÕÓÔÉ³ÚÕæïèäßÙÚÉÅä×ÚÔ×æÔÉ×Úïá×ïåÉßÉÔÙÚäÉæÓ×ÜÜïÉà×âÓÉ×ÉÑÙÙÔÉâßÔÉÖãäÉßÉæÓ×ÜÜïÉÓÚÞÙïÉäàßåÉåÙÚÑÉßÉàÙèÓÉïÙãÉáßÜÜÉÓÚÞÙïÉßäÉ×åáÓÜÜ\097ÉïÙãäãÖÓ\09aÕÙÛ\099á×äÕà©â«³£ï²ÕÔÈ·±â¨ë```)
  
+ ## Solution
+ 
+ The python3 code below is my solution to this challenge.
+ ```python
+ def convert1_str(s):
+    result = ''
+    for i in range(len(s)):
+        result += chr(ord(s[i]) + 15)
+
+    return result
+
+def convert2_str(s):
+    result = ''
+    for i in range(len(s)):
+        result += chr(ord(s[i]) ^ 135)
+
+    return result
+
+if __name__ == "__main__":
+    s = 'á×äÓâæíäàßåÉÛãåäÉÖÓÉäàÓÉÖÓåäÉÓÚÕæïèäßÙÚÉÛÓäàÙÔÉÓâæÉàÓÚÕÓÒÙæäàÉäàßåÉßåÉäàÓÉÚÓáÉ·Ôâ×ÚÕÓÔÉ³ÚÕæïèäßÙÚÉÅä×ÚÔ×æÔÉ×Úïá×ïåÉßÉÔÙÚäÉæÓ×ÜÜïÉà×âÓÉ×ÉÑÙÙÔÉâßÔÉÖãäÉßÉæÓ×ÜÜïÉÓÚÞÙïÉäàßåÉåÙÚÑÉßÉàÙèÓÉïÙãÉáßÜÜÉÓÚÞÙïÉßäÉ×åáÓÜÜ\x97ÉïÙãäãÖÓ\x9aÕÙÛ\x99á×äÕà©â«³£ï²ÕÔÈ·±â¨ë'
+    flag = convert2_str( convert1_str(s) )
+
+    print(flag)
+```
+
+## Flag
+
+```watevr{this_must_be_the_best_encryption_method_evr_henceforth_this_is_the_new_Advanced_Encryption_Standard_anyways_i_dont_really_have_a_good_vid_but_i_really_enjoy_this_song_i_hope_you_will_enjoy_it_aswell!_youtube.com/watch?v=E5yFcdPAGv0}```
+ 
+## Reproducibility
+TA
