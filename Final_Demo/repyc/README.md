@@ -9,7 +9,14 @@ At first, we will get a pyc file called ```3nohtyp.pyc```. Let's decompile it to
 
 ![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/repyc/img/decompile.png)
 
-Let's open the original .py file(```repyc.py```):
+Let's open the original .py file(```repyc.py```). And we can see some strange characters in the first three line:
+```python
+佤 = 0
+侰 = ~佤 * ~佤
+俴 = 侰 + 侰
+```
+
+
 
 
 
