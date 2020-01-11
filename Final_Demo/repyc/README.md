@@ -85,7 +85,7 @@ main_function([
  
 After more inspection, we know that the ```main_function``` will do the corresponding action, according to the first character of the sub list in ```input_size```.
 
-So I interpret the action by the sub lists in ```input_size```
+So I interpret the actions according to  the sub lists in ```input_size```:
 
 ```python
 main_function([
@@ -125,7 +125,7 @@ main_function([
   '꿚', 0, 4],
  [  # assign the sixth element of _16list to 19
   '꼖', 5, 19],
- [
+ [  
   '꽲', 0, 6, 5],
  [  # print the first element of _16list (user input after conversion)
   '돯', 1],
@@ -138,3 +138,39 @@ main_function([
  [
   '듃']])
   ```
+In the middle part of the file, we can see
+
+```python
+elif _arg == '꾮':
+    tmp_string = ''
+    for i in range(len(_16list[info_list[0]])):
+        tmp_string += chr(ord(_16list[info_list[0]][i]) ^ _16list[info_list[1]])
+
+    _16list[info_list[0]] = tmp_string
+elif _arg == '꿚':
+    tmp_string = ''
+    for i in range(len(_16list[info_list[0]])):
+        tmp_string += chr(ord(_16list[info_list[0]][i]) - _16list[info_list[1]])
+
+    _16list[info_list[0]] = tmp_string
+```
+
+Which is used to convert user's input string to a string, and
+
+
+```python
+elif _arg == '꽲': 
+    _16list[7] = 0
+    for i in range(len(_16list[info_list[0]])):
+        if _16list[info_list[0]] != _16list[info_list[1]]: # compare user's input and the s string
+            _16list[7] = 1
+            var1 = _16list[info_list[2]] 
+            buff.append(var1)
+```
+
+which is used to compare the converted user input and the string(```á×äÓâæíäàßåÉÛãåäÉÖÓÉäàÓÉÖÓåäÉÓÚÕæïèäßÙÚÉÛÓäàÙÔÉÓâæÉàÓÚÕÓÒÙæäàÉäàßåÉßåÉäàÓÉÚÓáÉ·Ôâ×ÚÕÓÔÉ³ÚÕæïèäßÙÚÉÅä×ÚÔ×æÔÉ×Úïá×ïåÉßÉÔÙÚäÉæÓ×ÜÜïÉà×âÓÉ×ÉÑÙÙÔÉâßÔÉÖãäÉßÉæÓ×ÜÜïÉÓÚÞÙïÉäàßåÉåÙÚÑÉßÉàÙèÓÉïÙãÉáßÜÜÉÓÚÞÙïÉßäÉ×åáÓÜÜ\097ÉïÙãäãÖÓ\09aÕÙÛ\099á×äÕà©â«³£ï²ÕÔÈ·±â¨ë```)
+
+And I noticed that some part(line67~111) of the ```main_function``` is wrong intented, so I did some correction of the code.
+
+Now everything is clear, we need to reverse the operations, which are done on user's input, on the string(```á×äÓâæíäàßåÉÛãåäÉÖÓÉäàÓÉÖÓåäÉÓÚÕæïèäßÙÚÉÛÓäàÙÔÉÓâæÉàÓÚÕÓÒÙæäàÉäàßåÉßåÉäàÓÉÚÓáÉ·Ôâ×ÚÕÓÔÉ³ÚÕæïèäßÙÚÉÅä×ÚÔ×æÔÉ×Úïá×ïåÉßÉÔÙÚäÉæÓ×ÜÜïÉà×âÓÉ×ÉÑÙÙÔÉâßÔÉÖãäÉßÉæÓ×ÜÜïÉÓÚÞÙïÉäàßåÉåÙÚÑÉßÉàÙèÓÉïÙãÉáßÜÜÉÓÚÞÙïÉßäÉ×åáÓÜÜ\097ÉïÙãäãÖÓ\09aÕÙÛ\099á×äÕà©â«³£ï²ÕÔÈ·±â¨ë```)
+ 
