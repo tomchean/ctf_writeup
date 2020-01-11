@@ -87,7 +87,7 @@ After more inspection, we know that the ```main_function``` will do the correspo
 
 So I interpret the action by the sub lists in ```input_size```
 
-```
+```python
 main_function([
  [  # assign the first element of _16list to 'Authentication token: '
   '꼖', 0, 'Authentication token: '],   
