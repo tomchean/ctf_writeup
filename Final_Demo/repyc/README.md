@@ -15,7 +15,20 @@ Let's open the original .py file(```repyc.py```). And we can see some strange ch
 侰 = ~佤 * ~佤
 俴 = 侰 + 侰
 ```
+It's really annoying and hard to understand the code, so let's change them to some common characters:
 
+```python
+A = 0
+B = ~A * ~A
+C = B + B
+```
+And do some calculations:
+
+```python
+A = 0
+B = 1
+C = 2
+```
 
 
 
