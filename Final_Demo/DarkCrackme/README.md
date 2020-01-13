@@ -53,7 +53,7 @@ In sub_401201, we know that it first creates an array whose length is 4 and assi
 
 Let's go back to ```sub_401291``` to see what it has done.
 
-![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/DarkCrackme/sub_401291.png)
+![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/DarkCrackme/convert.png)
 
 So, we know that it first check whether the password's characters are in ```aAdgjlqetuozcbm``` and ```aSfhkwryipxvn52```. And then it create two binary arrays(one from the founded character with even index and the other from that with odd index). And it combines the two strings into one. Repeat the above steps 18 times to convert all the characters to binary arrays and gather all arrays and store it into a large array, whose size is ```8*18```.
 
