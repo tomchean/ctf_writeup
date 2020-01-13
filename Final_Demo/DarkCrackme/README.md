@@ -35,7 +35,7 @@ In line 11, we know the input string length of ```password``` is two times of th
 
 sub_401291(c code)
 
-![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/DarkCrackme/sub_401291.png)
+![image](https://github.com/tomchean/ctf_writeup/blob/master/Final_Demo/DarkCrackme/convert.png)
 
 In line 29 - 33, it calls ```sub_4011A7``` and ```sub_401201```. We only know that in the for loop, ```sub_4011A7``` takes two password's char(one with the even index and the other with the odd index) each time and do something with two string(```aAdgjlqetuozcbm``` and ```aSfhkwryipxvn52```). And ```sub_401201``` takes the output of ```sub_4011A7``` as input and do something. So let's dig into these two functions to see what happen.
 
